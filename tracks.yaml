@@ -1,3 +1,4 @@
+release_repo_url: git@github.com:tgenovese/orocos_kdl_vendor-release.git
 tracks:
   humble:
     actions:
