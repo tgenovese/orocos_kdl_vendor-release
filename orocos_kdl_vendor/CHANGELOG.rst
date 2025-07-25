@@ -2,27 +2,22 @@
 Changelog for package orocos_kdl_vendor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.8.0 (2025-04-25)
+0.5.1 (2024-05-13)
 ------------------
-
-0.7.1 (2025-04-25)
-------------------
-* Use the same cmake version (`#36 <https://github.com/ros2/orocos_kdl_vendor/issues/36>`_)
-* Resolve compatibility issue with newer cmake (`#35 <https://github.com/ros2/orocos_kdl_vendor/issues/35>`_)
-* Contributors: Alejandro Hernández Cordero, Øystein Sture
-
-0.7.0 (2024-11-20)
-------------------
-* fix: add cxx_standard to avoid c++ check error (`#30 <https://github.com/ros2/orocos_kdl_vendor/issues/30>`_)
-* Contributors: Homalozoa X
-
-0.6.1 (2024-06-17)
-------------------
-* Ensure that orocos_kdl_vendor doesn't accidentally find itself. (`#27 <https://github.com/ros2/orocos_kdl_vendor/issues/27>`_)
-* Contributors: Chris Lalancette
-
-0.6.0 (2024-04-26)
-------------------
+* Ensure that orocos_kdl_vendor doesn't accidentally find itself. (`#27 <https://github.com/ros2/orocos_kdl_vendor/issues/27>`_) (`#28 <https://github.com/ros2/orocos_kdl_vendor/issues/28>`_)
+  When initially building the orocos_kdl_vendor package (on platforms
+  where it actually builds), it turns out that it places a
+  valid cmake configuration in the build directory.  In turn,
+  that means that a subsequent rebuild will find this configuration
+  in the build directory, and throw the rest of the logic off.
+  This only seems to be a problem with CMake 3.29 and later, though
+  I can't say exactly why at the moment.
+  Workaround this problem by writing the configuration out to a
+  temporary file, and then moving it into the final place with
+  the final name.
+  (cherry picked from commit 7aad6d1ad9fa54f3a48f1f194a85127e362c8ade)
+  Co-authored-by: Chris Lalancette <clalancette@gmail.com>
+* Contributors: mergify[bot]
 
 0.5.0 (2024-01-24)
 ------------------
