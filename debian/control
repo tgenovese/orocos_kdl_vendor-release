@@ -1,0 +1,13 @@
+Source: ros-jazzy-python-orocos-kdl-vendor
+Section: misc
+Priority: optional
+Maintainer: Jacob Perron <jacob@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), python3-pykdl, ros-jazzy-ament-cmake, ros-jazzy-ament-cmake-python, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-ament-lint-common <!nocheck>, ros-jazzy-orocos-kdl-vendor, ros-jazzy-pybind11-vendor, ros-jazzy-python-cmake-module, ros-jazzy-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-python-orocos-kdl-vendor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-pykdl, ros-jazzy-orocos-kdl-vendor, ros-jazzy-pybind11-vendor, ros-jazzy-ros-workspace
+Description: Wrapper around PyKDL, providing nothing but a dependency on PyKDL on some systems.
+ On others, it fetches and builds python_orocos_kdl locally.
